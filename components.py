@@ -86,7 +86,8 @@ KUBEFLOW_URI = "https://qa.unifytwin.com/kubeflow_admin/"
 LOGIN_TOKEN = "5f719768f0154a0b9a32ba1cdbfea09d"
 client = kfp.Client(host=KUBEFLOW_URI, cookies=f'login-token={LOGIN_TOKEN}')
 
-60*24
+#test
+
 
 
 
