@@ -45,7 +45,7 @@ create_step_get_metrics = kfp.components.create_component_from_func(
     packages_to_install=['pandas==1.2.4', 'numpy==1.21.0', 'scikit-learn==0.24.2']
 )
 
-
+##############################################################################################
 # Define the pipeline
 @dsl.pipeline(
     name='IRIS classifier Kubeflow Demo Pipeline',
@@ -77,19 +77,20 @@ def iris_classifier_pipeline(data_path: str):
     log_predicted_probabilities.execution_options.caching_strategy.max_cache_staleness = "P0D"
     log_metrics_task.execution_options.caching_strategy.max_cache_staleness = "P0D"
 
-
+###########################################################################################
 kfp.compiler.Compiler().compile(
     pipeline_func=iris_classifier_pipeline,
     package_path='IRIS_Classifier_pipeline1.yaml')
 
+
+#########################################################################################
 KUBEFLOW_URI = "https://qa.unifytwin.com/kubeflow_admin/"
 LOGIN_TOKEN = "5f719768f0154a0b9a32ba1cdbfea09d"
-client = kfp.Client(host=KUBEFLOW_URI, cookies=f'login-token={LOGIN_TOKEN}')
 
 #test
 
 
-
+##############################################################################################
 DATA_PATH = '/data'
 
 import datetime
