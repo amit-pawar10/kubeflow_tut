@@ -90,4 +90,26 @@ client = kfp.Client(host=KUBEFLOW_URI, cookies=f'login-token={LOGIN_TOKEN}')
 
 
 
+DATA_PATH = '/data'
+
+import datetime
+print(datetime.datetime.now().date())
+
+
+pipeline_func = iris_classifier_pipeline
+experiment_name = 'iris_classifier_exp' +"_"+ str(datetime.datetime.now().date())
+run_name = pipeline_func.__name__ + ' run'
+namespace = "kubeflow"
+
+arguments = {"data_path":DATA_PATH}
+
+kfp.compiler.Compiler().compile(pipeline_func,
+  '{}.zip'.format(experiment_name))
+
+run_result = client.create_run_from_pipeline_func(pipeline_func,
+                                                  experiment_name=experiment_name,
+                                                  run_name=run_name,
+                                                  arguments=arguments)
+
+
 

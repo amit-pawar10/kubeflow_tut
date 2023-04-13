@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
   generateName: iris-classifier-kubeflow-demo-pipeline-
-  annotations: {pipelines.kubeflow.org/kfp_sdk_version: 1.8.20, pipelines.kubeflow.org/pipeline_compilation_time: '2023-04-11T16:46:42.578652',
+  annotations: {pipelines.kubeflow.org/kfp_sdk_version: 1.8.20, pipelines.kubeflow.org/pipeline_compilation_time: '2023-04-13T12:44:00.122191',
     pipelines.kubeflow.org/pipeline_spec: '{"description": "A sample pipeline that
       performs IRIS classifier task", "inputs": [{"name": "data_path", "type": "String"}],
       "name": "IRIS classifier Kubeflow Demo Pipeline"}'}
