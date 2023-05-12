@@ -84,8 +84,8 @@ kfp.compiler.Compiler().compile(
 
 
 #########################################################################################
-KUBEFLOW_URI = "https://qa.unifytwin.com/kubeflow_admin/"
-LOGIN_TOKEN = "5f719768f0154a0b9a32ba1cdbfea09d"
+KUBEFLOW_URI = #kubeflow_URL here
+LOGIN_TOKEN = #access_token here
 
 #test
 
